@@ -1,6 +1,6 @@
 const express = require('express');
 const sqlite = require('@vlcn.io/crsqlite');
-const { open } = require('@vlcn.io/wa-sqlite');
+const waSQLite = require('@vlcn.io/wa-sqlite');
 require('dotenv').config();
 
 const app = express();
@@ -8,7 +8,7 @@ app.use(express.json());
 
 async function initializeDatabase() {
   // Open SQLite database
-  const db = await open({
+  const db = await waSQLite.open({
     filename: 'mobileshop.db',
     driver: sqlite
   });
