@@ -19,4 +19,4 @@ I can also use this project later to build more advanced systems or include it i
 show my skills when applying for jobs, internships, or other opportunities.
 
 FOR SEMMESTER PROJECT:
-I can submit it to the teacher as the semester final project.
+I can submit it to the teacher as the semester final 2nd smester project.
