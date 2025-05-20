@@ -1,6 +1,7 @@
 const express = require('express');
 const { Database } = require('@vlcn.io/crsqlite');
-const { open } = require('@vlcn.io/wa-sqlite');
+const waSQLite = require('@vlcn.io/wa-sqlite');
+const open = waSQLite.open;
 require('dotenv').config();
 
 const app = express();
