@@ -1,7 +1,6 @@
 const express = require('express');
-const { Database } = require('@vlcn.io/crsqlite');
-const waSQLite = require('@vlcn.io/wa-sqlite');
-const open = waSQLite.open;
+const sqlite = require('@vlcn.io/crsqlite');
+const { open } = require('@vlcn.io/wa-sqlite');
 require('dotenv').config();
 
 const app = express();
@@ -11,7 +10,7 @@ async function initializeDatabase() {
   // Open SQLite database
   const db = await open({
     filename: 'mobileshop.db',
-    driver: Database
+    driver: sqlite
   });
 
   // Create tables if they don't exist
