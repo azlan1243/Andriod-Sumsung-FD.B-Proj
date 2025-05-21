@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Phone Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Samsung Compare</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#compare">Compare</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section active">
+        <div class="hero">
+            <img src="https://cdn.dribbble.com/users/954572/screenshots/20225943/media/4a8c0bf9dc44f38066221e6710701a78.gif" alt="Samsung Phones" style="border-radius: 100px;" height="400px" width="1050px">
+            <h1>Compare Samsung Phones</h1>
+            <p>Find the perfect device that matches your needs and budget</p>
+            <a href="#compare" class="cta-button">Start Comparing</a>
+        </div>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Latest Models</h3>
+                <p>Compare the newest Samsung phones with detailed specifications</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Quick Comparison</h3>
+                <p>Easy side-by-side comparison of multiple devices</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-star"></i>
+                <h3>Expert Reviews</h3>
+                <p>Get insights from our expert reviews</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <h2>Samsung Phones</h2>
+        <div class="products-grid" id="products-container"></div>
+    </section>
+
+    <section id="compare" class="section">
+        <h2>Compare Phones</h2>
+        <div class="compare-container">
+            <div class="phone-selector">
+                <select id="phone-select">
+                    <option value="">Select a phone to compare</option>
+                </select>
+                <button id="add-to-compare" class="cta-button">Add to Compare</button>
+            </div>
+            <div id="comparison-table" class="comparison-table"></div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section">
+        <h2>User Profile</h2>
+        <div class="profile-container">
+            <form id="profile-form" class="profile-form">
+                <div class="form-group">
+                    <label for="userId">User ID</label>
+                    <input type="text" id="userId" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email</label>
+                    <input type="email" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" min="18" max="120" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Save Profile</button>
+            </form>
+            <div class="profile-preview">
+                <h3>Profile Preview</h3>
+                <div class="profile-card" id="profile-preview-card">
+                    <div class="profile-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h4 id="preview-name">Your Name</h4>
+                    </div>
+                    <div class="profile-details">
+                        <p><strong>User ID:</strong> <span id="preview-userId">-</span></p>
+                        <p><strong>Email:</strong> <span id="preview-email">-</span></p>
+                        <p><strong>Phone:</strong> <span id="preview-phone">-</span></p>
+                        <p><strong>Age:</strong> <span id="preview-age">-</span></p>
+                        <p><strong>Address:</strong> <span id="preview-address">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orders Section -->
+    <section id="orders" class="section">
+        <h2>Place Your Order</h2>
+        <div class="orders-container">
+            <form id="order-form" class="order-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="orderId">Order ID</label>
+                        <input type="text" id="orderId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderUserId">User ID</label>
+                        <input type="text" id="orderUserId" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="orderDate">Order Date</label>
+                    <input type="date" id="orderDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="product">Select Product</label>
+                    <select id="product" required>
+                        <option value="">Choose a product</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" id="quantity" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalAmount">Total Amount</label>
+                        <input type="text" id="totalAmount" readonly>
+                    </div>
+                </div>
+                <div class="order-summary" id="order-summary">
+                    <h3>Order Summary</h3>
+                    <p>No items added yet.</p>
+                </div>
+                <button type="submit" class="cta-button">Place Order</button>
+            </form>
+            <div class="previous-orders">
+                <h3>Previous Orders</h3>
+                <div id="orders-list" class="orders-list">
+                    <p>No previous orders found.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <h2>Product Reviews</h2>
+        <div class="reviews-container">
+            <form id="review-form" class="review-form">
+                <div class="form-group">
+                    <label for="reviewProduct">Select Product</label>
+                    <select id="reviewProduct" required>
+                        <option value="">Choose a product</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reviewUserId">User ID</label>
+                    <input type="text" id="reviewUserId" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating-container">
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" />
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reviewText">Your Review</label>
+                    <textarea id="reviewText" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Recommendation</label>
+                    <div class="recommendation-buttons">
+                        <button type="button" class="recommend-btn" data-value="good">
+                            <i class="fas fa-thumbs-up"></i> Good
+                        </button>
+                        <button type="button" class="recommend-btn" data-value="poor">
+                            <i class="fas fa-thumbs-down"></i> Poor
+                        </button>
+                    </div>
+                    <input type="hidden" id="recommendation" required>
+                </div>
+                <button type="submit" class="cta-button">Submit Review</button>
+            </form>
+            <div class="reviews-list">
+                <h3>Recent Reviews</h3>
+                <div id="reviews-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>support@samsungcompare.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>123 Tech Street, Silicon Valley, CA 94025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-message">
+                "Discover the innovation of Samsung mobile phones. Offering advanced technology, stunning displays, powerful performance for all your smartphone, from budget to premium."
+            </div>
+            <div class="footer-copyright">
+                © 2024 Samsung Compare. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="phones.js"></script>
+    <script src="database.js"></script>
+    <script src="user.js"></script>
+    <script src="orders.js"></script>
+    <script src="reviews.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
